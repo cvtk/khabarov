@@ -180,10 +180,10 @@ h2 {
 	opacity: 0;
 	width: 80%;
 	font-size: 3em;
-	color: rgba(255, 255, 255, 0.45);
+	color: rgba(255, 255, 255, 0.25);
 	margin-right: 2em;
 	float: right;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.45);
+	border-bottom: solid 2px rgba(255, 255, 255, 0.25);
 	transition: all ease 2s;
 	transition-delay: 0.5s;
 }
@@ -201,12 +201,19 @@ h4 {
 
 }
 
+.logo {
+	float: left;
+	width: 10em;
+}
+
 .logo__img {
-	width: 6em;
-	height: 6em;
+	width: 3em;
+	height: 3em;
 }
 
 .logo__header {
-	font-size: 3em;
+	font-family: "Lobster", sans-serif;
+	font-size: 1em;
 	color: #fff;
+	vertical-align: middle;
 }

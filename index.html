@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
@@ -19,6 +20,10 @@
 	<div class="background-overlay">
 	</div>
 	<header id="headerTop">
+		<div class="logo">
+				<img class="logo__img" src="assets/logo.svg" alt="Logo">
+				<span class="logo__header header">Мастерская Безопасности Хабарова</span>
+			</div>
 		<nav id="altNav" class="alt-nav">
 			<a data-menuanchor="home" class="alt-nav__link alt-nav__link_active" href=#home></a>
 			<a data-menuanchor="request" class="alt-nav__link" href=#request></a>
@@ -36,10 +41,6 @@
 	<main id="fullpage">
 		<section data-anchor="home">
 			<div class="title"><h2>Ваш комфорт</h2></div>
-			<div class="logo">
-				<img class="logo__img" src="assets/logo.svg" alt="Logo">
-				<span class="logo__header header">Мастерская Безопасности</span>
-			</div>
 		</section>
 		<section data-anchor="request">
 			<div class="title"><h2>Оставить заявку</h2></div>
@@ -53,9 +54,13 @@
 	</main>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#mainNav > a').on('mouseenter', function(e){
-				$('#toolTip').html($(this).attr('data-tooltip'));
-			});
+			$('#mainNav > a')
+				.on('mouseenter', function() {
+					$('#toolTip').html($(this).attr('data-tooltip'));
+				})
+				.on('mouseleave', function() {
+					$('#toolTip').html('')
+				});
 
 	    	$('#fullpage').fullpage({
 	    		anchors:['home', 'request', 'about', 'contact'],
