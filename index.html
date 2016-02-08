@@ -8,57 +8,65 @@
 	<link rel="stylesheet" type="text/css" href="assets/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
 	<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
 </head>
 <body class="page">
-	<video autoplay loop muted poster="assets/poster.jpg" class="background-video">
+	<video autoplay loop muted poster="assets/poster.jpg" id="backgroundVideo" class="background-video">
 		<source src="assets/background.mp4">
 	</video>
 	<div class="background-overlay">
 	</div>
-	<header id="headerTop" class="header-top">
+	<header id="headerTop">
 		<nav id="altNav" class="alt-nav">
 			<a data-menuanchor="home" class="alt-nav__link alt-nav__link_active" href=#home></a>
 			<a data-menuanchor="request" class="alt-nav__link" href=#request></a>
 			<a data-menuanchor="about" class="alt-nav__link" href=#about></a>
 			<a data-menuanchor="contact" class="alt-nav__link" href=#contact></a>
 		</nav>
-		<nav class="main-nav">
-			<a class="main-nav__link main-nav__link_home" href=#home></a>
-			<a class="main-nav__link main-nav__link_request" href=#request></a>
-			<a class="main-nav__link main-nav__link_about" href=#about></a>
-			<a class="main-nav__link main-nav__link_contact" href=#contact></a>
+		<nav id="mainNav" class="main-nav">
+			<a class="main-nav__link main-nav__link_home" href=#home data-tooltip="Главная"></a>
+			<a class="main-nav__link main-nav__link_request" href=#request data-tooltip="Оставить заявку"></a>
+			<a class="main-nav__link main-nav__link_about" href=#about data-tooltip="О нас"></a>
+			<a class="main-nav__link main-nav__link_contact" href=#contact data-tooltip="Контакты"></a>
+			<span id="toolTip" class="tool-tip"></span>
 		</nav>
 	</header>
 	<main id="fullpage">
-		<section class="section" data-anchor="home">
-			<h2 class="header header_h2">Ваша безопасность</h2>
+		<section data-anchor="home">
+			<div class="title"><h2>Ваш комфорт</h2></div>
 			<div class="logo">
 				<img class="logo__img" src="assets/logo.svg" alt="Logo">
-				<span class="logo__header header">Мастерская Хабарова</span>
-				<span class="logo__text">Безопасность жизни</span>
+				<span class="logo__header header">Мастерская Безопасности</span>
 			</div>
 		</section>
-		<section class="section" data-anchor="request">
-			<h2 class="header header_h2">Оставить заявку</h2>
+		<section data-anchor="request">
+			<div class="title"><h2>Оставить заявку</h2></div>
 		</section>
-		<section class="section" data-anchor="about">
-			<h2 class="header header_h2">О нас</h2>
+		<section data-anchor="about">
+			<div class="title"><h2>О нас</h2></div>
 		</section>
-		<section class="section" data-anchor="contact">
-			<h2 class="header header_h2">Контакты</h2>
+		<section data-anchor="contact">
+			<div class="title"><h2>Контакты</h2></div>
 		</section>
 	</main>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			$('#mainNav > a').on('mouseenter', function(e){
+				$('#toolTip').html($(this).attr('data-tooltip'));
+			});
+
 	    	$('#fullpage').fullpage({
 	    		anchors:['home', 'request', 'about', 'contact'],
 	    		menu: '#altNav',
-	    		fixedElements: '#headerTop'
+	    		fixedElements: '#headerTop',
+	    		sectionSelector: 'section',
+	    		verticalCentered: false
 	    	});
 		});
+		var video = document.getElementById('backgroundVideo');
+			video.playbackRate = 0.7;
 	</script>
 
 </body>
