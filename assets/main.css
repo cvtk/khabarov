@@ -150,15 +150,13 @@
 .header_h2 {
 	font-size: 3em;
 	color: rgba(255, 255, 255, 0.25);
-	width: 50%;
-	float: right;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.25);
 }
 
 .header_h2:after {
 	content: "";
 	display: block;
-	clear: both;
+	border-bottom: solid 2px rgba(255, 255, 255, 0.25);
+	width: 50%
 }
 .header_h4 {
 	font-size: 1.5em;
@@ -171,4 +169,9 @@
 .logo__img {
 	width: 6em;
 	height: 6em;
+}
+
+.logo__header {
+	font-size: 3em;
+	color: #fff;
 }
