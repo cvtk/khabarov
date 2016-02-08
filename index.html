@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Khabarov&Co - Добро пожаловать</title>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="assets/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
+</head>
+<body class="page">
+	<video autoplay loop muted poster="assets/poster.jpg" class="background-video">
+		<source src="assets/background.mp4">
+	</video>
+	<div class="background-overlay">
+	</div>
+	<header id="headerTop" class="header-top">
+		<nav id="altNav" class="alt-nav">
+			<a data-menuanchor="home" class="alt-nav__link alt-nav__link_active" href=#home></a>
+			<a data-menuanchor="request" class="alt-nav__link" href=#request></a>
+			<a data-menuanchor="about" class="alt-nav__link" href=#about></a>
+			<a data-menuanchor="contact" class="alt-nav__link" href=#contact></a>
+		</nav>
+		<nav class="main-nav">
+			<a class="main-nav__link main-nav__link_home" href=#home></a>
+			<a class="main-nav__link main-nav__link_request" href=#request></a>
+			<a class="main-nav__link main-nav__link_about" href=#about></a>
+			<a class="main-nav__link main-nav__link_contact" href=#contact></a>
+		</nav>
+	</header>
+	<main id="fullpage">
+		<section class="section" data-anchor="home">
+			<h2 class="header header_h2">Ваша безопасность</h2>
+			<div class="logo">
+				<img class="logo__img" src="assets/logo.svg" alt="Logo"></img>
+			</div>
+		</section>
+		<section class="section" data-anchor="request">
+			<h2 class="header header_h2">Оставить заявку</h2>
+		</section>
+		<section class="section" data-anchor="about">
+			<h2 class="header header_h2">О нас</h2>
+		</section>
+		<section class="section" data-anchor="contact">
+			<h2 class="header header_h2">Контакты</h2>
+		</section>
+	</main>
+	<script type="text/javascript">
+		$(document).ready(function() {
+	    	$('#fullpage').fullpage({
+	    		anchors:['home', 'request', 'about', 'contact'],
+	    		menu: '#altNav',
+	    		fixedElements: '#headerTop'
+	    	});
+		});
+	</script>
+
+</body>
+</html>
