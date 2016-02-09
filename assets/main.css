@@ -160,9 +160,9 @@ h1, h2, h3, h4 {
 	display: block;
 	margin: 0;
 	padding: 0;
-	text-align: right;
 	text-transform: uppercase;
 	font-weight: 900;
+	color: #fff;
 }
 
 .title {
@@ -183,6 +183,7 @@ h2 {
 	color: rgba(255, 255, 255, 0.25);
 	margin-right: 2em;
 	float: right;
+	text-align: right;
 	border-bottom: solid 2px rgba(255, 255, 255, 0.25);
 	transition: all ease 2s;
 	transition-delay: 0.5s;
@@ -193,27 +194,88 @@ h2 {
 	width: 50%;
 	margin-right: 0;
 }
+
 h4 {
 	font-size: 1.5em;
-	color: #fff;
 	text-transform: none;
 	font-weight: normal;
 
 }
 
+h3 {
+	width: 12em;
+	font-size: 2em;
+	padding-left: .4em;
+	border-left: solid 4px #fff;
+}
+
 .logo {
+	display: none;
 	float: left;
-	width: 10em;
+	min-width: 12em;
 }
 
 .logo__img {
+	display: block;
+	float: left;
 	width: 3em;
 	height: 3em;
+	margin-right: .6em;
 }
 
 .logo__header {
+	display: block;
 	font-family: "Lobster", sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+}
+
+.logo__header_purp:first-letter {
+	color: #E25B42;
+}
+
+.logo__header_yell:first-letter {
+	color: #F5C028;
+}
+
+.logo_art {
+	min-width: 100%;
+	margin-bottom: 1.5em;
+}
+
+.logo__img_art {
+	width: 7em;
+	height: 7em;
+}
+
+.logo__header_art {
+	font-size: 2.8em;
+}
+
+.logo:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+article {
+	display: block;
+	opacity: 0;
+	transform: scale(0.8);
+	width: 50%;
+	transition: transform ease 1.5s;
+	transition-delay: 0.5s;
+}
+
+.active article {
+	opacity: 1;
+	transform: scale(1);
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	font-size: 1em;
 	color: #fff;
-	vertical-align: middle;
+	margin-top: 1.5em;
 }
