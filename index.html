@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
 </head>
 <body class="page">
+	<div id="loaderScreen" class="loader-screen"></div>
 	<video autoplay loop muted poster="assets/poster.jpg" id="backgroundVideo" class="background-video">
 		<source src="assets/background.mp4">
 	</video>
@@ -31,13 +32,13 @@
 		
 		<nav id="altNav" class="alt-nav">
 			<a data-menuanchor="home" class="alt-nav__link alt-nav__link_active" href=#home></a>
-			<a data-menuanchor="request" class="alt-nav__link" href=#request></a>
+			<a data-menuanchor="price" class="alt-nav__link" href=#price></a>
 			<a data-menuanchor="about" class="alt-nav__link" href=#about></a>
 			<a data-menuanchor="contact" class="alt-nav__link" href=#contact></a>
 		</nav>
 		<nav id="mainNav" class="main-nav">
 			<a class="main-nav__link main-nav__link_home" href=#home data-tooltip="Главная"></a>
-			<a class="main-nav__link main-nav__link_request" href=#request data-tooltip="Оставить заявку"></a>
+			<a class="main-nav__link main-nav__link_price" href=#price data-tooltip="Цены"></a>
 			<a class="main-nav__link main-nav__link_about" href=#about data-tooltip="О нас"></a>
 			<a class="main-nav__link main-nav__link_contact" href=#contact data-tooltip="Контакты"></a>
 			<span id="toolTip" class="tool-tip"></span>
@@ -70,8 +71,8 @@
 				</div>
 			</article>
 		</section>
-		<section data-anchor="request">
-			<div class="title"><h2>Оставить заявку</h2></div>
+		<section data-anchor="price">
+			<div class="title"><h2>Цены</h2></div>
 		</section>
 		<section data-anchor="about">
 			<div class="title"><h2>О нас</h2></div>
@@ -90,6 +91,11 @@
 		</section>
 	</main>
 	<script type="text/javascript">
+		$(window).on('load', function () {
+    		var $preloader = $('#loaderScreen');
+    		$preloader.delay(500).fadeOut('slow');
+		});
+
 		$(document).ready(function() {
 			$('#mainNav > a')
 				.on('mouseenter', function() {
@@ -100,7 +106,7 @@
 				});
 
 	    	$('#fullpage').fullpage({
-	    		anchors:['home', 'request', 'about', 'contact'],
+	    		anchors:['home', 'price', 'about', 'contact'],
 	    		menu: '#altNav',
 	    		fixedElements: '#headerTop',
 	    		sectionSelector: 'section',
