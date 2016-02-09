@@ -156,7 +156,7 @@ section {
 	height: auto;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -167,6 +167,7 @@ h1, h2, h3, h4 {
 
 .title {
 	margin: 7em auto;
+	margin-bottom: 3.5em;
 	width: 100%;
 }
 
@@ -209,6 +210,12 @@ h3 {
 	border-left: solid 4px #fff;
 }
 
+h5 {
+	font-size: 1.2em;
+	text-transform: none;
+	font-weight: normal;
+}
+
 .logo {
 	display: none;
 	float: left;
@@ -230,22 +237,15 @@ h3 {
 	color: #fff;
 }
 
-.logo__header_purp:first-letter {
-	color: #E25B42;
-}
-
-.logo__header_yell:first-letter {
-	color: #F5C028;
-}
-
 .logo_art {
 	min-width: 100%;
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 }
 
 .logo__img_art {
 	width: 7em;
 	height: 7em;
+	margin-right: 1.8em;
 }
 
 .logo__header_art {
@@ -260,9 +260,11 @@ h3 {
 
 article {
 	display: block;
+	position: relative;
+	box-sizing: border-box;
 	opacity: 0;
 	transform: scale(0.8);
-	width: 50%;
+	width: 100%;
 	transition: transform ease 1.5s;
 	transition-delay: 0.5s;
 }
@@ -272,10 +274,67 @@ article {
 	transform: scale(1);
 }
 
+.col-50-50 {
+	position: relative;
+	float: left;
+	width: 50%;
+}
+
 p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 1em;
 	color: #fff;
-	margin-top: 1.5em;
+	margin-top: 2em;
+}
+
+.about-pic {
+	margin-top: -2em;
+	max-width: 110%;
+	height: auto;
+}
+
+.need-action {
+	text-align: right;
+	float: right;
+	margin-top: 12em;
+}
+
+.need-action__phone {
+	font-family: "Open Sans", sans-serif;
+	font-size: 3.5em;
+	font-weight: 300;
+	color: #fff;
+}
+
+.need-action__phone_small {
+	font-size: 2.5em;
+}
+
+.need-action__social {
+	font-family: "FontAwesome";
+	font-size: 1.2em;
+	color: rgba(255, 255, 255, 0.9);
+	vertical-align: middle;
+	text-align: center;
+	line-height: 32px;
+	text-decoration: none;
+	margin-right: .5em;
+	transition: .3s;
+}
+
+.need-action__social:hover {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.need-action__social_vk:after {
+	content: "\f189";
+}
+
+.need-action__social_mail:after {
+	content: "\f003";
+}
+
+.need-action__social_google:after {
+	content: "\f0d4";
 }
