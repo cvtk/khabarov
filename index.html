@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Khabarov&Co - Добро пожаловать</title>
+	<meta charset="utf-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/normalize.css">
+	<link rel="stylesheet" type="text/css" href="assets/jquery.fullPage.css">
+	<link rel="stylesheet" type="text/css" href="assets/main.css">
+	<link rel="stylesheet" type="text/css" href="assets/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
+</head>
+<body class="page">
+	<video autoplay loop muted poster="assets/poster.jpg" id="backgroundVideo" class="background-video">
+		<source src="assets/background.mp4">
+	</video>
+	<div class="background-overlay">
+	</div>
+	<header id="headerTop">
+		<a class="home-link" href="#home">
+			<div id="headerLogo" class="logo">
+				<img class="logo__img" src="assets/logo.svg" alt="Logo">
+				<span class="logo__header logo__header_purp">Мастерская</span>
+				<span class="logo__header logo__header_yell">Хабарова</span>
+			</div>
+		</a>
+		
+		<nav id="altNav" class="alt-nav">
+			<a data-menuanchor="home" class="alt-nav__link alt-nav__link_active" href=#home></a>
+			<a data-menuanchor="request" class="alt-nav__link" href=#request></a>
+			<a data-menuanchor="about" class="alt-nav__link" href=#about></a>
+			<a data-menuanchor="contact" class="alt-nav__link" href=#contact></a>
+		</nav>
+		<nav id="mainNav" class="main-nav">
+			<a class="main-nav__link main-nav__link_home" href=#home data-tooltip="Главная"></a>
+			<a class="main-nav__link main-nav__link_request" href=#request data-tooltip="Оставить заявку"></a>
+			<a class="main-nav__link main-nav__link_about" href=#about data-tooltip="О нас"></a>
+			<a class="main-nav__link main-nav__link_contact" href=#contact data-tooltip="Контакты"></a>
+			<span id="toolTip" class="tool-tip"></span>
+		</nav>
+	</header>
+	<main id="fullpage">
+		<section data-anchor="home">
+			<div class="title"><h2>Ваше спокойствие</h2></div>
+			<article>
+				<div class="logo_art">
+					<img class="logo__img logo__img_art" src="assets/logo.svg" alt="Logo">
+					<span class="logo__header logo__header_art">Мастерская</span>
+					<span class="logo__header logo__header_art">Хабарова</span>
+				</div>
+				<h3>Видеонаблюдение: монтаж и настройка</h3>
+				<p>Необходимость видеонаблюдения с каждым днем становится очевидной все более широкому кругу людей. Наша мастерская предлагает Вам качество и гарантии уровня крупных интеграторов по ценам наёмных работников.</p>
+			</article>
+		</section>
+		<section data-anchor="request">
+			<div class="title"><h2>Оставить заявку</h2></div>
+		</section>
+		<section data-anchor="about">
+			<div class="title"><h2>О нас</h2></div>
+		</section>
+		<section data-anchor="contact">
+			<div class="title"><h2>Контакты</h2></div>
+		</section>
+	</main>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#mainNav > a')
+				.on('mouseenter', function() {
+					$('#toolTip').html($(this).attr('data-tooltip'));
+				})
+				.on('mouseleave', function() {
+					$('#toolTip').html('')
+				});
+
+	    	$('#fullpage').fullpage({
+	    		anchors:['home', 'request', 'about', 'contact'],
+	    		menu: '#altNav',
+	    		fixedElements: '#headerTop',
+	    		sectionSelector: 'section',
+	    		verticalCentered: false,
+	    		onLeave: function(index, nextIndex, direction) {
+	    			var leavingSection = $(this);
+	    			if (index===1) {
+	    				$('#headerLogo').show('slow');
+	    			}
+	    			if (nextIndex === 1) {
+	    				$('#headerLogo').hide('slow');
+	    			}
+	    		}
+	    	});
+		});
+		var video = document.getElementById('backgroundVideo');
+			video.playbackRate = 0.7;
+	</script>
+
+</body>
+</html>
