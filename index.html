@@ -13,6 +13,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
+	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body class="page">
 	<div id="loaderScreen" class="loader-screen"></div>
@@ -60,7 +61,7 @@
 				<div class="col-50-50">
 					<div class="need-action">
 						<h5>Свяжитесь с нами</h5>
-						<a class="need-action__social need-action__social_vk" href=#></a>
+						<a class="need-action__social need-action__social_vk" href=# data-provider="facebook"></a>
 						<a class="need-action__social need-action__social_mail" href=#></a>
 						<a class="need-action__social need-action__social_google" href=#></a>
 						<div class="need-action-phone">
@@ -73,6 +74,17 @@
 		</section>
 		<section data-anchor="price">
 			<div class="title"><h2>Цены</h2></div>
+			<article>
+				<table class="price-table">
+					<tr><td rowspan="2">Выберите решение</td><th class="price-table__header">Эконом</th><th class="price-table__header">Стандарт</th></tr>
+					<tr><td class="price-table__money">34 900</td><td class="price-table__money">69 500</td></tr>
+					<tr><td>Количество IP-камер</td><td>1</td><td>4</td></tr>
+					<tr><td>Резервное питание</td><td><i class="fa fa-check"></i></td><td><i class="fa fa-check"></i></td></tr>
+					<tr><td>Монтаж кабеля питания</td><td><i class="fa fa-times"></i></td><td><i class="fa fa-check"></td></tr>
+					<tr><td>Мониторинг</td><td><i class="fa fa-times"></i></td><td><i class="fa fa-check"></i></td></tr>
+					<tr><td>Программное обеспечение</td><td>2 устройства</td><td>4 устройства</td></tr>
+				</table>
+			</article>
 		</section>
 		<section data-anchor="about">
 			<div class="title"><h2>О нас</h2></div>
@@ -91,12 +103,44 @@
 		</section>
 	</main>
 	<script type="text/javascript">
+		function thirdPartyLogin(provider) {
+        var deferred = $.Deferred();
+
+        rootRef.authWithOAuthPopup(provider, function (err, user) {
+            if (err) {
+            	console.log(err)
+                deferred.reject(err);
+            }
+
+            if (user) {
+                deferred.resolve(user);
+            }
+        });
+
+        return deferred.promise();
+    	};
+
+
 		$(window).on('load', function () {
+			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
 
 		$(document).ready(function() {
+			$('.need-action__social_vk').on('click', function (e) {
+
+            var $currentButton = $(this);
+            var provider = $currentButton.data('provider');
+            var socialLoginPromise;
+            e.preventDefault();
+
+            socialLoginPromise = thirdPartyLogin(provider);
+            console.log(socialLoginPromise);
+
+        });
+
+
 			$('#mainNav > a')
 				.on('mouseenter', function() {
 					$('#toolTip').html($(this).attr('data-tooltip'));
