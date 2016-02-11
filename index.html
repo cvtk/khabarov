@@ -16,6 +16,9 @@
 	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body class="page">
+	<div id="adminPanel" class="admin-panel">
+		<a id="signOut" class="admin-panel__on-auth" href=#></a>
+	</div>
 	<div id="loaderScreen" class="loader-screen"></div>
 	<video autoplay loop muted poster="assets/poster.jpg" id="backgroundVideo" class="background-video">
 		<source src="assets/background.mp4">
@@ -122,6 +125,11 @@
 
 		$(window).on('load', function () {
 			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
+			if (rootRef.getAuth()) {
+				$('#adminPanel').show().children('#onAuth').on('click', function(){
+					rootRef.offAuth();
+				});
+			};
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
@@ -135,8 +143,6 @@
             e.preventDefault();
 
             socialLoginPromise = thirdPartyLogin(provider);
-            console.log(socialLoginPromise);
-
         });
 
 
