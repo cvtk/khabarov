@@ -106,30 +106,24 @@
 		</section>
 	</main>
 	<script type="text/javascript">
-		function thirdPartyLogin(provider) {
-        var deferred = $.Deferred();
 
-        rootRef.authWithOAuthPopup(provider, function (err, user) {
-            if (err) {
-                deferred.reject(err);
-            }
-
-            if (user) {
-                deferred.resolve(user);
-            }
-        });
-
-        return deferred.promise();
-    	};
-
+		function authHandler(err, user) {
+			if (err) {
+				console.log('Login failed!', err);
+			} else {
+			    console.log("User " + user.uid + " is logged in with " + user.provider);
+			}
+		}
 
 		$(window).on('load', function () {
 			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
-			if (rootRef.getAuth()) {
-				$('#adminPanel').show().children('#onAuth').on('click', function(){
-					rootRef.offAuth();
+			rootRef.onAuth(function(){
+				$('#adminPanel').show();
+				$('#onAuth').on('click', function(){
+					rootRef.offAuth(authHandler);
 				});
-			};
+			});
+
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
@@ -139,10 +133,9 @@
 
             var $currentButton = $(this);
             var provider = $currentButton.data('provider');
-            var socialLoginPromise;
             e.preventDefault();
 
-            socialLoginPromise = thirdPartyLogin(provider);
+            rootRef.authWithOAuthPopup(provider, authHandler);
         });
 
 
