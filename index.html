@@ -62,7 +62,7 @@
 					<div class="need-action">
 						<h5>Свяжитесь с нами</h5>
 						<a class="need-action__social need-action__social_vk" href=# data-provider="facebook"></a>
-						<a class="need-action__social need-action__social_mail" href=#></a>
+						<a class="need-action__social need-action__social_mail" href=# data-provider="google"></a>
 						<a class="need-action__social need-action__social_google" href=#></a>
 						<div class="need-action-phone">
 							<span class="need-action__phone need-action__phone_small">+7 (915) </span><span class="need-action__phone">968&#x2012;93&#x2012;88</span>
@@ -108,7 +108,6 @@
 
         rootRef.authWithOAuthPopup(provider, function (err, user) {
             if (err) {
-            	console.log(err)
                 deferred.reject(err);
             }
 
@@ -128,7 +127,7 @@
 		});
 
 		$(document).ready(function() {
-			$('.need-action__social_vk').on('click', function (e) {
+			$('.need-action__social').on('click', function (e) {
 
             var $currentButton = $(this);
             var provider = $currentButton.data('provider');
