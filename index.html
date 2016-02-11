@@ -111,24 +111,20 @@
 			if (err) {
 				console.log('Login failed!', err);
 			} else {
+				$('#adminPanel').show();
 			    console.log("User " + user.uid + " is logged in with " + user.provider);
 			}
 		}
 
 		$(window).on('load', function () {
 			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
-			rootRef.onAuth(function(){
-				$('#adminPanel').show();
-				$('#onAuth').on('click', function(){
-					rootRef.offAuth(authHandler);
-				});
-			});
-
+			$('#onAuth').on('click', rootRef.unauth(authHandler));
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
 
 		$(document).ready(function() {
+
 			$('.need-action__social').on('click', function (e) {
 
             var $currentButton = $(this);
