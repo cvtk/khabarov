@@ -3,22 +3,23 @@ body {
 }
 
 .admin-panel {
+	display: block;
 	position: fixed;
-	display: none;
-	padding: 1em 3.5em;
+	z-index: 1;
 	top: 0;
-	left: 0;
+	left: 0em;
 	right: 0;
-	height: 3.5em;
-	font-size: 1em;
+	padding: 0 3.5em;
 	text-align: right;
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.admin-panel__on-auth {
+.admin-panel__btn {
+	font-size: 2em;
 	text-decoration: none;
 }
 
-.admin-panel__on-auth:after {
+.admin-panel__btn_logout:after {
 	font-family: "FontAwesome";
 	content: "\f08b";
 	color: #FFFF33;
