@@ -358,3 +358,66 @@ p {
 .need-action__social_google:after {
 	content: "\f0d4";
 }
+
+.price-table {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1em;
+	font-weight: 300;
+	color: #666;
+	text-align: center;
+	background-color: #fff;
+	opacity: .75;
+	border-radius: 5px 5px 0 0;
+}
+
+.price-table__header:before {
+	content: "\f0c0";
+	font-family: "FontAwesome";
+	font-size: 2em;
+	color: #336699;
+	padding: .4em .4em;
+	margin: 0 1em 1em 1em;
+	border-radius: 2em;
+	background-color: #6699CC; 
+
+}
+
+.price-table__header {
+	word-wrap: break-word;
+	max-width: 3em;
+	text-transform: lowercase;
+	font-size: 1.2em;
+	font-weight: 400;
+	color: #fff;
+	padding: .6em 2em;
+	background-color: #336699;
+}
+
+.price-table__money:after {
+	font-family: "FontAwesome";
+	content: "\f158";
+	vertical-align: sub;
+	font-size: 1em;
+	margin-left: .2em;
+}
+
+.price-table__money {
+	font-family: "Roboto", sans-serif;
+	font-size: 2em;
+	font-weight: 400;
+	color: #fff;
+	padding: 1em 1em;
+	background-color: #6699CC;
+}
+
+.price-table td {
+	padding: .6em 1em;
+}
+
+.price-table tr:nth-child(even) {
+	background-color: #99CCFF;
+}
+
+.price-table th {
+
+}
