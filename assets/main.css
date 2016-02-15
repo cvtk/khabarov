@@ -45,7 +45,7 @@ body {
 	width: 100%;
 	height: auto;
 	background: url("overlay.png") center center repeat;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 header {
