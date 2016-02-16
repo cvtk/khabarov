@@ -331,11 +331,20 @@ p {
 	margin-top: 12em;
 }
 
+.need-action-phone__link {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	transition: .3s;
+}
+
+.need-action-phone__link:hover {
+	color: rgba(255, 255, 255, 0.5);
+}
+
 .need-action__phone {
 	font-family: "Open Sans", sans-serif;
 	font-size: 3em;
 	font-weight: 300;
-	color: #fff;
 }
 
 .need-action__phone_small {
