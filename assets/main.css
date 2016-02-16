@@ -3,6 +3,18 @@ body {
 	background-color: #000;
 }
 
+@media (max-width: 1366px) {
+  body { font-size: medium; }
+}
+
+@media (min-width: 1367px) {
+  body { font-size: large; }
+}
+
+@media (max-width: 960px) {
+  body { font-size: small; }
+}
+
 .loader-screen {
 	position: fixed;
 	width: 100%;
@@ -598,9 +610,6 @@ p {
 }
 
 @media (max-width:641px) {
-	body {
-		font-size: .75em;
-	}
 
 	header {
 		padding: 1em;
