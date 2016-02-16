@@ -11,6 +11,10 @@ body {
   body { font-size: large; }
 }
 
+@media (min-width: 1824px) {
+  body { font-size: x-large; }
+}
+
 @media (max-width: 960px) {
   body { font-size: small; }
 }
