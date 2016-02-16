@@ -1,5 +1,6 @@
 body {
 	font-family: "Roboto", sans-serif;
+	background-color: #000;
 }
 
 .admin-panel {
@@ -68,7 +69,7 @@ body {
 	width: 100%;
 	height: auto;
 	background: url("overlay.png") center center repeat;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -224,11 +225,11 @@ h2 {
 	opacity: 0;
 	width: 80%;
 	font-size: 3em;
-	color: rgba(255, 255, 255, 0.25);
+	color: rgba(255, 255, 255, 0.45);
 	margin-right: 2em;
 	float: right;
 	text-align: right;
-	border-bottom: solid 2px rgba(255, 255, 255, 0.25);
+	border-bottom: solid 2px rgba(255, 255, 255, 0.45);
 	transition: all ease 2s;
 	transition-delay: 0.5s;
 }
@@ -237,6 +238,12 @@ h2 {
 	opacity: 1;
 	width: 50%;
 	margin-right: 0;
+}
+
+@media (max-width:961px) {
+	.active h2 {
+		width: 80%;
+	}
 }
 
 h4 {
@@ -263,6 +270,10 @@ h5 {
 	display: none;
 	float: left;
 	min-width: 12em;
+}
+
+.logo_visible {
+	display: block;
 }
 
 .logo__img {
@@ -345,13 +356,20 @@ p {
 
 .need-action__phone {
 	font-family: "Open Sans", sans-serif;
-	font-size: 3.5em;
+	font-size: 3em;
 	font-weight: 300;
 	color: #fff;
 }
 
 .need-action__phone_small {
-	font-size: 2.5em;
+	font-size: .6em;
+}
+
+.need-action__phone_small:before {
+	content: "\f098";
+	font-family: "FontAwesome";
+	margin-right: .3em;
+
 }
 
 .need-action__social {
@@ -443,4 +461,39 @@ p {
 
 .price-table th {
 
+}
+
+
+@media (max-width:641px) {
+	.logo {
+		display: block;
+	}
+	.main-nav {
+		display: none;
+	}
+
+	.col-50-50 {
+		width: 100%;
+	}
+
+	.need-action {
+		text-align: left;
+    	float: left;
+    	margin-top: 2em;
+	}
+
+	.logo_art {
+		display: none;
+	}
+
+	.active h2 {
+		width: 100%;
+		border-bottom: none;
+		text-align: left;
+	}
+
+	.title {
+		margin: 5em auto;
+    	margin-bottom: 1.5em;
+	}
 }

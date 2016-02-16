@@ -13,7 +13,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
-	<script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
 </head>
 <body class="page">
 	<div id="adminPanel" class="admin-panel">
@@ -68,7 +67,7 @@
 						<a class="need-action__social need-action__social_mail" href=# data-provider="google"></a>
 						<a class="need-action__social need-action__social_google" href=#></a>
 						<div class="need-action-phone">
-							<span class="need-action__phone need-action__phone_small">+7 (915) </span><span class="need-action__phone">968&#x2012;93&#x2012;88</span>
+							<span class="need-action__phone"><span class="need-action__phone_small">8 (915) </span>968-93-88</span>
 						</div>
 						
 					</div>
@@ -94,7 +93,7 @@
 			<article>
 				<div class="col-50-50">
 					<h3>Наша задача: доступное качество</h3>
-					<p>Мы накопили многолетний сфере пуско-наладки, развития и разработки проектов видеонаблюдения. За годы работы был осуществлен монтаж систем видеонаблюдения на объектах различного назначения — от многоквартирных домов до промышленных предприятий. Именно поэтому специалисты нашей мастерской знают, какое оборудование походит для конкретного объекта с учетом его характеристик и особенностей.</p>
+					<p>Мы накопили многолетний опыт в сфере пуско-наладки, развития и разработки проектов видеонаблюдения. За время нашей работы был осуществлен монтаж систем видеонаблюдения на объектах различного назначения — от многоквартирных домов до промышленных предприятий. Именно поэтому специалисты нашей мастерской знают, какое оборудование походит для конкретного объекта с учетом его характеристик и особенностей.</p>
 				</div>
 				<div class="col-50-50">
 					<img class="about-pic" src="assets/about_pic.png">
@@ -106,6 +105,7 @@
 		</section>
 	</main>
 	<script type="text/javascript">
+<<<<<<< HEAD
 
 		function authHandler(err, user) {
 			if (err) {
@@ -119,11 +119,16 @@
 		$(window).on('load', function () {
 			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
 			$('#onAuth').on('click', rootRef.unauth(authHandler));
+=======
+
+		$(window).on('load', function () {
+>>>>>>> refs/remotes/origin/master
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
 
 		$(document).ready(function() {
+<<<<<<< HEAD
 			$(self).on("keypress", function(e) { 
 				console.log(e.which);
 				if ( e.ctrlKey && ( e.which === 13 ) ) {
@@ -139,6 +144,8 @@
             rootRef.authWithOAuthPopup(provider, authHandler);
         });
 
+=======
+>>>>>>> refs/remotes/origin/master
 
 			$('#mainNav > a')
 				.on('mouseenter', function() {
@@ -157,16 +164,14 @@
 	    		onLeave: function(index, nextIndex, direction) {
 	    			var leavingSection = $(this);
 	    			if (index===1) {
-	    				$('#headerLogo').show('slow');
+	    				$('#headerLogo').addClass('logo_visible');
 	    			}
 	    			if (nextIndex === 1) {
-	    				$('#headerLogo').hide('slow');
+	    				$('#headerLogo').removeClass('logo_visible');
 	    			}
 	    		}
 	    	});
 		});
-		var video = document.getElementById('backgroundVideo');
-			video.playbackRate = 0.7;
 	</script>
 
 </body>
