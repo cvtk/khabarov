@@ -15,9 +15,6 @@
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
 </head>
 <body class="page">
-	<div id="adminPanel" class="admin-panel">
-		<a id="signOut" class="admin-panel__on-auth" href=#></a>
-	</div>
 	<div id="loaderScreen" class="loader-screen"></div>
 	<video autoplay loop muted poster="assets/poster.jpg" id="backgroundVideo" class="background-video">
 		<source src="assets/background.mp4">
@@ -64,7 +61,7 @@
 					<div class="need-action">
 						<h5>Свяжитесь с нами</h5>
 						<a class="need-action__social need-action__social_vk" href=# data-provider="facebook"></a>
-						<a class="need-action__social need-action__social_mail" href=# data-provider="google"></a>
+						<a class="need-action__social need-action__social_mail" href=#></a>
 						<a class="need-action__social need-action__social_google" href=#></a>
 						<div class="need-action-phone">
 							<span class="need-action__phone"><span class="need-action__phone_small">8 (915) </span>968-93-88</span>
@@ -105,51 +102,13 @@
 		</section>
 	</main>
 	<script type="text/javascript">
-<<<<<<< HEAD
-
-		function authHandler(err, user) {
-			if (err) {
-				console.log('Login failed!', err);
-			} else {
-				$('#adminPanel').show();
-			    console.log("User " + user.uid + " is logged in with " + user.provider);
-			}
-		}
 
 		$(window).on('load', function () {
-			rootRef = new Firebase("https://cvtk--simple-landing.firebaseio.com");
-			$('#onAuth').on('click', rootRef.unauth(authHandler));
-=======
-
-		$(window).on('load', function () {
->>>>>>> refs/remotes/origin/master
     		var $preloader = $('#loaderScreen');
     		$preloader.delay(500).fadeOut('slow');
 		});
 
 		$(document).ready(function() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-			$(self).on("keypress", function(e) { 
-				console.log(e.which);
-				if ( e.ctrlKey && ( e.which === 13 ) ) {
-	  			console.log( "You pressed CTRL + Del" );
-				}
-			});
-=======
-
->>>>>>> parent of 44b4346... 17
-			$('.need-action__social').on('click', function (e) {
-
-            var $currentButton = $(this);
-            var provider = $currentButton.data('provider');
-            e.preventDefault();
-
-            rootRef.authWithOAuthPopup(provider, authHandler);
-        });
-
-=======
->>>>>>> refs/remotes/origin/master
 
 			$('#mainNav > a')
 				.on('mouseenter', function() {
