@@ -223,29 +223,6 @@ h2 {
 	}
 }
 
-@media (max-width:641px) {
-	.logo {
-		display: block;
-	}
-	.main-nav {
-		display: none;
-	}
-
-	.col-50-50 {
-		width: 100%;
-	}
-
-	.logo_art {
-		display: none;
-	}
-
-	.active h2 {
-		width: 100%;
-		border-bottom: none;
-		text-align: left;
-	}
-}
-
 h4 {
 	font-size: 1.5em;
 	text-transform: none;
@@ -270,6 +247,10 @@ h5 {
 	display: none;
 	float: left;
 	min-width: 12em;
+}
+
+.logo_visible {
+	display: block;
 }
 
 .logo__img {
@@ -457,4 +438,39 @@ p {
 
 .price-table th {
 
+}
+
+
+@media (max-width:641px) {
+	.logo {
+		display: block;
+	}
+	.main-nav {
+		display: none;
+	}
+
+	.col-50-50 {
+		width: 100%;
+	}
+
+	.need-action {
+		text-align: left;
+    	float: left;
+    	margin-top: 2em;
+	}
+
+	.logo_art {
+		display: none;
+	}
+
+	.active h2 {
+		width: 100%;
+		border-bottom: none;
+		text-align: left;
+	}
+
+	.title {
+		margin: 5em auto;
+    	margin-bottom: 1.5em;
+	}
 }

@@ -127,10 +127,10 @@
 	    		onLeave: function(index, nextIndex, direction) {
 	    			var leavingSection = $(this);
 	    			if (index===1) {
-	    				$('#headerLogo').show('slow');
+	    				$('#headerLogo').addClass('logo_visible');
 	    			}
 	    			if (nextIndex === 1) {
-	    				$('#headerLogo').hide('slow');
+	    				$('#headerLogo').removeClass('logo_visible');
 	    			}
 	    		}
 	    	});
