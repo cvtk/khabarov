@@ -52,6 +52,7 @@ body {
 header {
 	position: fixed;
 	padding: 3.5em;
+	min-width: 300px;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -173,7 +174,8 @@ header {
 section {
 	padding: 3.5em;
 	margin: 0 auto;
-	min-width: 100%;
+	min-width: 300px;
+	width: 100%;
 	height: auto;
 }
 
@@ -246,7 +248,7 @@ h5 {
 .logo {
 	display: none;
 	float: left;
-	min-width: 12em;
+	min-width: 10em;
 }
 
 .logo_visible {
@@ -451,6 +453,18 @@ p {
 
 
 @media (max-width:641px) {
+	body {
+		font-size: .75em;
+	}
+
+	header {
+		padding: 1em;
+	}
+
+	section {
+		padding: 1em;
+	}
+
 	.logo {
 		display: block;
 	}
