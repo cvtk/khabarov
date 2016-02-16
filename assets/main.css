@@ -496,4 +496,10 @@ p {
 		margin: 5em auto;
     	margin-bottom: 1.5em;
 	}
+
+	.about-pic {
+		display: block;
+    	margin: 0 auto;
+        max-width: 55%;
+	}
 }
