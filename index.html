@@ -60,8 +60,8 @@
 				<div class="col-50-50">
 					<div class="need-action">
 						<h5>Свяжитесь с нами</h5>
-						<a class="need-action__social need-action__social_vk" href=# data-provider="facebook"></a>
-						<a class="need-action__social need-action__social_mail" href=#></a>
+						<a class="need-action__social need-action__social_vk" href="https://vk.com/dpurple" target="_blank"></a>
+						<a class="need-action__social need-action__social_mail" href="mailto:info@camerafhd.ru"></a>
 						<a class="need-action__social need-action__social_google" href=#></a>
 						<div class="need-action-phone">
 							<a class="need-action-phone__link" href="tel:89159689388">
@@ -76,15 +76,7 @@
 		<section data-anchor="price">
 			<div class="title"><h2>Цены</h2></div>
 			<article>
-				<table class="price-table">
-					<tr><td rowspan="2">Выберите решение</td><th class="price-table__header">Эконом</th><th class="price-table__header">Стандарт</th></tr>
-					<tr><td class="price-table__money">34 900</td><td class="price-table__money">69 500</td></tr>
-					<tr><td>Количество IP-камер</td><td>1</td><td>4</td></tr>
-					<tr><td>Резервное питание</td><td><i class="fa fa-check"></i></td><td><i class="fa fa-check"></i></td></tr>
-					<tr><td>Монтаж кабеля питания</td><td><i class="fa fa-times"></i></td><td><i class="fa fa-check"></td></tr>
-					<tr><td>Мониторинг</td><td><i class="fa fa-times"></i></td><td><i class="fa fa-check"></i></td></tr>
-					<tr><td>Программное обеспечение</td><td>2 устройства</td><td>4 устройства</td></tr>
-				</table>
+				
 			</article>
 		</section>
 		<section data-anchor="about">
@@ -101,9 +93,79 @@
 		</section>
 		<section data-anchor="contact">
 			<div class="title"><h2>Контакты</h2></div>
+				<article>
+					<div class="col-50-50">
+						<div class="contact-info">
+							<p class="contact-info__elem">Эл. почта: <a href="mailto:info@camerafhd.ru" class="contact-info__link">info@camerafhd.ru</a></p>
+							<p class="contact-info__elem">Телефон: <a href="tel:89159689388" class="contact-info__link">8 (915) 968-93-88</a></p>
+							<p class="contact-info__elem">Веб-сайт: <a href="http://camerafhd.ru" class="contact-info__link" target="_blank">http://camerafhd.ru</a></p>
+							<div class="contact-info_logo">
+								<img class="logo__img logo__img_cont" src="assets/logo.svg" alt="Logo">
+								<span class="logo__header logo__header_cont">Мастерская</span>
+								<span class="logo__header logo__header_cont">Хабарова</span>
+							</div>
+							<p class="contact-info__copyright">©&nbsp;2011–2016&nbsp;&nbsp; Мастерская Хабарова</p>
+						</div>
+					</div>
+					<div class="col-50-50">
+						<form id="my_contact_form_0629a1aab20f497883b5aefaf43e39b3_form" role="form" action="http://my-contact-form.ru/form/0629a1aa-b20f-4978-83b5-aefaf43e39b3/sent" method="POST" class="contact-mail">
+						    <div class="contact-mail__wrap contact-mail__wrap_name">
+						        <input class="contact-mail__input" placeholder="Ваше имя" maxlength="50" type="text" name="name" id="name" required><button class="contact-mail__submit" type="submit">Отправить</button>
+						    </div>
+						    <div class="contact-mail__wrap contact-mail__wrap_phone">
+						        <input class="contact-mail__input" placeholder="Телефон для связи" maxlength="50" type="text" name="phone" id="phone" required>
+						    </div>
+						    <div class="contact-mail__wrap contact-mail__wrap_email">
+						        <input class="contact-mail__input" placeholder="Адрес эл. почты" maxlength="50" type="email" name="email" id="email" >
+						    </div>
+						    <div class="contact-mail__wrap contact-mail__wrap_text">
+						        <textarea class="contact-mail__input" placeholder="Сообщение..." type="text" maxlength="512" name="message" id="message" required></textarea>
+						    </div>
+						</form>
+					</div>
+					
+				</article>
 		</section>
 	</main>
 	<script type="text/javascript">
+        $(function() {
+
+            $('#my_contact_form_0629a1aab20f497883b5aefaf43e39b3_form').on('submit', function(e) {
+            var method = 'POST';
+                    var form = $(this);
+                    if (form.attr('method'))
+                    method = form.attr('method');
+                    var inputs = form.find('input,textarea');
+                    var params = {};
+                    for (var i = 0; i < inputs.length; i++)
+            {
+            params[$(inputs[i]).attr('name')] = $(inputs[i]).val();
+            }
+            $.ajax({
+            type: method,
+                    url: form.attr('action'),
+                    data: params,
+                    success: function(response) {
+
+                    alert('Сообщение успешно отправлено!');
+                            form.trigger('reset');
+                            return false;
+                    },
+                    error: function(response, statusText, xhr, $form) {
+
+                    if (response.status == 408)
+                            alert('Отправка сообщений временно приостановленна!');
+                            else
+                            if (response.status == 429)
+                            alert('Достигнут лимит для отправки сообщений!');
+                            else
+                            alert('При отправке сообщения возникла ошибка!');
+                            return false;
+                    }
+            });
+                    return false;
+            });
+            });
 
 		$(window).on('load', function () {
     		var $preloader = $('#loaderScreen');
