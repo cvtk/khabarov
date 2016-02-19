@@ -218,7 +218,6 @@
     		$preloader.delay(500).fadeOut('slow');
 		});
 
-		var isPhoneDevice = "ontouchstart" in document.documentElement; 
 		$(document).ready(function() {
 
 			$('#mainNav > a')
@@ -228,26 +227,24 @@
 				.on('mouseleave', function() {
 					$('#toolTip').html('')
 				});
-			if(!isPhoneDevice){
 
-		    	$('#fullpage').fullpage({
-		    		anchors:['home', 'price', 'about', 'contact'],
-		    		menu: '#altNav',
-		    		fixedElements: '#headerTop',
-		    		sectionSelector: 'section',
-		    		verticalCentered: false,
-		    		scrollingSpeed: 1500,
-		    		onLeave: function(index, nextIndex, direction) {
-		    			var leavingSection = $(this);
-		    			if (index===1) {
-		    				$('#headerLogo').addClass('logo_visible');
-		    			}
-		    			if (nextIndex === 1) {
-		    				$('#headerLogo').removeClass('logo_visible');
-		    			}
-		    		}
-		    	});
-		    }
+	    	$('#fullpage').fullpage({
+	    		anchors:['home', 'price', 'about', 'contact'],
+	    		menu: '#altNav',
+	    		fixedElements: '#headerTop',
+	    		sectionSelector: 'section',
+	    		verticalCentered: false,
+	    		scrollingSpeed: 1500,
+	    		onLeave: function(index, nextIndex, direction) {
+	    			var leavingSection = $(this);
+	    			if (index===1) {
+	    				$('#headerLogo').addClass('logo_visible');
+	    			}
+	    			if (nextIndex === 1) {
+	    				$('#headerLogo').removeClass('logo_visible');
+	    			}
+	    		}
+	    	});
 		});
 	</script>
 
