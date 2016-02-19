@@ -4,6 +4,7 @@
 	<title>Khabarov&Co - Добро пожаловать</title>
 	<meta charset="utf-8">
 	<meta name=viewport content="width=device-width, initial-scale=1">
+  	<meta name="Keywords" content="Видеонаблюдение в ярославле, безопасность дома, видеонаблюдение цены">
 	<link rel="stylesheet" type="text/css" href="assets/normalize.css">
 	<link rel="stylesheet" type="text/css" href="assets/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
@@ -11,6 +12,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,900,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<!--[if lt IE 9]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 	<script type="text/javascript" src="assets/jquery-1.12.0.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.fullPage.min.js"></script>
 </head>
@@ -68,7 +72,6 @@
 								<span class="need-action__phone"><span class="need-action__phone_small">8 (915) </span>968-93-88</span>
 							</a>
 						</div>
-						
 					</div>
 				</div>
 			</article>
@@ -76,14 +79,57 @@
 		<section data-anchor="price">
 			<div class="title"><h2>Цены</h2></div>
 			<article>
-				
+				<div class="col-50-50">
+					<h3>Наша цены: доступное качество</h3>
+					<p>Мы понимаем, что на стадии принятия решения Вы хотите представлять порядок цен на средний проект. Для этого мы предлагаем ознакомится с оценочной стоимостью пакетных решений нашей Мастерской.</p>
+					<p>На большинство вопросов, возниакющих на стадии предпроекта мы готовы ответить по телефону. Также для осмотра объекта Вы можете пригласить нашего специалиста всего за 1000 рублей, в последствии мы вычтем эту сумму из сметной стоимости.</p>
+				</div>
+				<div class="col-50-50">
+					<table class="price">
+						<tr>
+							<th rowspan="2"></th>
+							<th>Стандарт</th>
+							<th>Расширенный</th>
+						</tr>
+						<tr>
+							<th>35 000 <i class="fa fa-rub"></i></th>
+							<th>58 500 <i class="fa fa-rub"></i></th>
+						</tr>
+						<tr>
+							<td>Количество камер</td>
+							<td>1</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<td>Резервный источник питания</td>
+							<td><i class="fa fa-check"></i></td>
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+						<tr>
+							<td>Мониторинг безопасности камер</td>
+							<td><i class="fa fa-times"></i></td>
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+						<tr>
+							<td>Хранение записи с камеры</td>
+							<td><i class="fa fa-check"></i></td>
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+						<tr>
+							<td>Согласование монтажа линии питания</td>
+							<td><i class="fa fa-times"></i></td>
+							<td><i class="fa fa-check"></i></td>
+						</tr>
+
+					</table>
+				</div>
 			</article>
 		</section>
 		<section data-anchor="about">
 			<div class="title"><h2>О нас</h2></div>
 			<article>
 				<div class="col-50-50">
-					<h3>Наша задача: доступное качество</h3>
+					<h3>Наша задача: ваша безопасность</h3>
 					<p>Мы накопили многолетний опыт в сфере пуско-наладки, развития и разработки проектов видеонаблюдения. За время нашей работы был осуществлен монтаж систем видеонаблюдения на объектах различного назначения — от многоквартирных домов до промышленных предприятий. Именно поэтому специалисты нашей мастерской знают, какое оборудование походит для конкретного объекта с учетом его характеристик и особенностей.</p>
 				</div>
 				<div class="col-50-50">
@@ -172,6 +218,7 @@
     		$preloader.delay(500).fadeOut('slow');
 		});
 
+		var isPhoneDevice = "ontouchstart" in document.documentElement; 
 		$(document).ready(function() {
 
 			$('#mainNav > a')
@@ -181,23 +228,26 @@
 				.on('mouseleave', function() {
 					$('#toolTip').html('')
 				});
+			if(!isPhoneDevice){
 
-	    	$('#fullpage').fullpage({
-	    		anchors:['home', 'price', 'about', 'contact'],
-	    		menu: '#altNav',
-	    		fixedElements: '#headerTop',
-	    		sectionSelector: 'section',
-	    		verticalCentered: false,
-	    		onLeave: function(index, nextIndex, direction) {
-	    			var leavingSection = $(this);
-	    			if (index===1) {
-	    				$('#headerLogo').addClass('logo_visible');
-	    			}
-	    			if (nextIndex === 1) {
-	    				$('#headerLogo').removeClass('logo_visible');
-	    			}
-	    		}
-	    	});
+		    	$('#fullpage').fullpage({
+		    		anchors:['home', 'price', 'about', 'contact'],
+		    		menu: '#altNav',
+		    		fixedElements: '#headerTop',
+		    		sectionSelector: 'section',
+		    		verticalCentered: false,
+		    		scrollingSpeed: 1500,
+		    		onLeave: function(index, nextIndex, direction) {
+		    			var leavingSection = $(this);
+		    			if (index===1) {
+		    				$('#headerLogo').addClass('logo_visible');
+		    			}
+		    			if (nextIndex === 1) {
+		    				$('#headerLogo').removeClass('logo_visible');
+		    			}
+		    		}
+		    	});
+		    }
 		});
 	</script>
 
